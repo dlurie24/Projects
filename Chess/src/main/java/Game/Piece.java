@@ -4,8 +4,9 @@ public abstract class Piece {
     protected int x;
     protected int y;
     protected Player player;
+    protected String type;
 
-    public Piece(Player p) {
+    public Piece(Player p, String type) {
         player = p;
     }
 
@@ -28,6 +29,13 @@ public abstract class Piece {
      */
     public String getColor() {
         return player.getColor();
+    }
+
+    /**
+     * @return Piece's type
+     */
+    public String getType() {
+        return type;
     }
 
     /**

@@ -6,7 +6,7 @@ import Game.Player;
 public class Pawn extends Piece {
 
     public Pawn(Player p, int xPos, int yPos) {
-        super(p);
+        super(p, "PAWN");
         setPos(xPos, yPos);
     }
 
