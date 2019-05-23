@@ -3,6 +3,9 @@ import Pieces.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+/**
+ * Class to test the Player class
+ */
 public class PlayerTest {
 
     @Test(expected = IllegalArgumentException.class)
@@ -38,7 +41,13 @@ public class PlayerTest {
         Bishop bishop = new Bishop(p, 0, 0);
         Queen queen = new Queen(p, 0, 0);
         King king = new King(p, 0, 0);
+
         assertEquals(p.getPiece(0).getType(), pawn.getType());
         assertEquals(p.getPiece(7).getType(), pawn.getType());
+        assertEquals(p.getPiece(8).getType(), rook.getType());
+        assertEquals(p.getPiece(9).getType(), knight.getType());
+        assertEquals(p.getPiece(10).getType(), bishop.getType());
+        assertEquals(p.getPiece(11).getType(), queen.getType());
+        assertEquals(p.getPiece(12).getType(), king.getType());
     }
 }

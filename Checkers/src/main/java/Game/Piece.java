@@ -9,5 +9,10 @@ public abstract class Piece {
         type = t;
     }
 
-    public abstract boolean isValidMove(int currX, int currY, int finalX, int finalY);
+    public abstract boolean isValidMove(int currR, int currC, int finalR, int finalC);
+
+    @Override
+    public String toString() {
+        return "[" + type + " " + color + "]";
+    }
 }

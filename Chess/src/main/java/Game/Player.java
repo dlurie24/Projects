@@ -6,12 +6,16 @@ import Pieces.Bishop;
 import Pieces.Queen;
 import Pieces.King;
 
+/**
+ * A game player
+ */
 public class Player {
     private String color;
     private int numMoves;
-    private Piece[] pieces;
+    public Piece[] pieces;
+    public Board board;
+
     private final int PAWN_START_ROW;
-    private Board board;
 
     /**
      * Player constructor
@@ -62,12 +66,31 @@ public class Player {
     }
 
     /**
+     * Gets a piece from a position on the board
+     * @param x - x position on board
+     * @param y - y position on board
+     * @return a piece belonging to player at (x, y)
+     */
+    public Piece getPiece(int x, int y) {
+        if ((x < 0 || x >= board.getWidth()) || (y < 0 || y >= board.getHeight())) {
+            throw new IllegalArgumentException("X or Y must be in bounds of the board");
+        }
+        Piece p = board.getPiece(x, y);
+        if (p.getColor().equals(getColor())) {
+            return p;
+        } else {
+            return null;
+        }
+    }
+
+    /**
      * Move piece to (x, y)
      * @param x - desired x location
      * @param y - desired y location
      * @param piece - desired piece to move
      */
     public void move(int x, int y, Piece piece) {
+        piece.move(x, y);
         numMoves++;
     }
 

@@ -2,14 +2,14 @@ package main.java.Pieces;
 import main.java.Game.Piece;
 
 public class Checker extends Piece {
-    public Checker(String c, String t) {
-        super(c, t);
+    public Checker(String c) {
+        super(c, "CHECKER");
     }
 
     @Override
-    public boolean isValidMove(int currX, int currY, int finalX, int finalY) {
-        int xDiff = Math.abs(finalX - currX);
-        int yDiff = finalY - currY;
-        return xDiff == 1 && yDiff == 1;
+    public boolean isValidMove(int currR, int currC, int finalR, int finalC) {
+        int colDiff = Math.abs(finalC - currC);
+        int rowDiff = finalR - currR;
+        return colDiff == 1 && rowDiff == 1;
     }
 }

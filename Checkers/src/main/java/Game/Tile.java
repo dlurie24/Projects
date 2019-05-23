@@ -29,5 +29,27 @@ public class Tile {
 
     public void setPiece(Piece p) {
         piece = p;
+        isOccupied = true;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public Piece getPiece() {
+        return piece;
+    }
+
+    public boolean isOccupied() {
+        return isOccupied;
+    }
+
+    @Override
+    public String toString() {
+        if (isOccupied()) {
+            return piece.toString();
+        } else {
+            return "[" + color + " TILE]";
+        }
     }
 }
